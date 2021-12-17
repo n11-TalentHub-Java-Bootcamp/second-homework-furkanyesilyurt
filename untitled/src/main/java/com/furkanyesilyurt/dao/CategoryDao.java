@@ -1,18 +1,16 @@
 package com.furkanyesilyurt.dao;
 
-import com.furkanyesilyurt.base.BaseDao;
 import com.furkanyesilyurt.entity.Category;
-import org.hibernate.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public class CategoryDao extends BaseDao {
+@Repository
+public interface CategoryDao extends JpaRepository<Category, Long> {
 
-    public List<Category> findAll(){
+    List<Category> findAllByUstKategoriIsNullOrderByAdiDesc();
 
-        Query query = getCurrentSession().createQuery(
-                "select kategori from Kategori kategori");
+    List<Category> findAllByAdiEndsWith(String adi);
 
-        return query.list();
-    }
 }
