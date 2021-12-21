@@ -10,7 +10,7 @@ public interface UserConverter {
 
     UserConverter INSTANCE = Mappers.getMapper(UserConverter.class);
 
-    @Mapping(source = "kategoriId", target = "kategori.id")
+    @Mapping(source = "id", target = "id")
     User convertUrunDtoToUrun(UserDto userDto);
 
     @AfterMapping
