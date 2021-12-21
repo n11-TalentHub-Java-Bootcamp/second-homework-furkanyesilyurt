@@ -15,6 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
 	</properties>
 	<dependencies>
 
@@ -38,10 +39,25 @@
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
 
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-security</artifactId>-->
+<!--		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.4.2.Final</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>1.4.2.Final</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springdoc</groupId>
@@ -68,6 +84,18 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${project.parent.version}</version>
+				<configuration>
+					<!--					<source>1.8</source> &lt;!&ndash; depending on your project &ndash;&gt;-->
+					<!--					<target>1.8</target> &lt;!&ndash; depending on your project &ndash;&gt;-->
+					<!--					<annotationProcessorPaths>-->
+					<!--						<path>-->
+					<!--							<groupId>org.mapstruct</groupId>-->
+					<!--							<artifactId>mapstruct-processor</artifactId>-->
+					<!--							<version>${org.mapstruct.version}</version>-->
+					<!--						</path>-->
+					<!--						&lt;!&ndash; other annotation processors &ndash;&gt;-->
+					<!--					</annotationProcessorPaths>-->
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

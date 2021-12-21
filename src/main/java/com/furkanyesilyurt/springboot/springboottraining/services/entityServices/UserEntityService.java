@@ -20,4 +20,13 @@ public class UserEntityService {
     public List<User> findByUserName(String userName){
         return (List<User>) userDao.findByUserName(userName);
     }
+
+    public User save(User user){
+        user = userDao.save(user);
+        return user;
+    }
+
+    public void deleteById(Long id){
+        userDao.deleteById(id);
+    }
 }
